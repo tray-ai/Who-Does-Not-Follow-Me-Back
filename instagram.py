@@ -15,7 +15,7 @@ for usernames in following_content['relationships_following']:
 # loop through user in follower dictionary to add them to the followers list.
 for usernames in follower_content:
     names = usernames['string_list_data'][0]['value']
-    #add these users to the 'following' list.
+    #add these users to the 'followers' list.
     followers.append(names)
 
 # compare lists to find users who are not following back.
