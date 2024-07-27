@@ -5,7 +5,7 @@ following_path = Path('following.json')
 follower_path = Path('followers_1.json')
 
 try:
-    # Read the files with users I follow, and user who do not follow back.
+    # Read the files with users I follow, and users who do not follow back.
     read_following_file = following_path.read_text()
     read_follower_file = follower_path.read_text()
 except FileNotFoundError:
