@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 def read_files(file):
-    '''Read the files and return the Python Object'''
+    """Read the files and return the Python Object"""
 
     # Read the file with the users I follow.
     path = Path(file)
