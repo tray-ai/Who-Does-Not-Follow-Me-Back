@@ -1,17 +1,16 @@
 import json
 from pathlib import Path
 
-def read_files(following_file, followers_file):
+def read_files(file):
     '''Read the files and return the Python Object'''
 
-    # read the file with the users I follow.
-    following_path = Path(following_file)
-    read_following_file = following_path.read_text()
-    following_content = json.loads(read_following_file)
+    # Read the file with the users I follow.
+    path = Path(file)
+    try:
+        read_file = path.read_text()
+    except FileNotFoundError:
+        print(f'The file {path} is not available.')
+    else:
+        content = json.loads(read_file)
 
-    # read the file user that follow me. 
-    follower_path = Path(followers_file)
-    read_follower_file = follower_path.read_text()
-    follower_content = json.loads(read_follower_file)
-
-    return following_content, follower_content
+    return content
