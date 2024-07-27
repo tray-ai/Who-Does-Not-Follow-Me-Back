@@ -12,5 +12,5 @@ def read_files(file):
         print(f'The file {path} is not available.')
     else:
         content = json.loads(read_file)
-
+        
     return content
