@@ -4,7 +4,7 @@ from pathlib import Path
 def read_files(file):
     """Read the files and return the Python Object"""
 
-    # Read the file with the users I follow.
+    # Read the file with the users I follow and users who do not follow back.
     path = Path(file)
     try:
         read_file = path.read_text()
