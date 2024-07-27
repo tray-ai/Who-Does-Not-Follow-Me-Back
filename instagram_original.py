@@ -1,24 +1,18 @@
 import json
 from pathlib import Path
 
-# Read the file with the users I follow.
+# Read the files with users I follow, and user who do not follow back.
 following_path = Path('following.json')
+follower_path = Path('followers_1.json')
+
 try:
     read_following_file = following_path.read_text()
-except FileNotFoundError:
-    print('The file does not exist in current directory.')
-else:
-    following_content = json.loads(read_following_file)
-
-# Read the file user that follow me. 
-follower_path = Path('followers_1.json')
-try:
     read_follower_file = follower_path.read_text()
 except FileNotFoundError:
     print('The file does not exist in current directory.')
 else:
+    following_content = json.loads(read_following_file)
     follower_content = json.loads(read_follower_file)
-
 
 # Initiate lists for the followers and following users. 
 following = []
